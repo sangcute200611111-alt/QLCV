@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
@@ -28,6 +29,11 @@ class MainActivity : AppCompatActivity() {
         btnTaoCongViec.setOnClickListener {
             val tenCV = edtTenCongViec.text.toString().trim()
             val moTaCV = edtMoTaCongViec.text.toString().trim()
+
+            if (tenCV.isEmpty()) {
+                edtTenCongViec.error = "Tên công việc không được để trống!"
+                return@setOnClickListener
+            }
 
             val congViec = CongViec(tenCV, moTaCV, false)
 
