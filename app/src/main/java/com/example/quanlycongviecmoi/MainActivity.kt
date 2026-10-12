@@ -24,4 +24,16 @@ class MainActivity : AppCompatActivity() {
         btnTaoCongViec = findViewById(R.id.btnTaoCongViec)
         btnXemDanhSach = findViewById(R.id.btnXemDanhSach)
     }
+
+    btnTaoCongViec.setOnClickListener {
+        val tenCV = edtTenCongViec.text.toString().trim()
+        val moTaCV = edtMoTaCongViec.text.toString().trim()
+
+
+        val intent = Intent(this, ChiTietCongViecActivity::class.java).apply {
+            putExtra("TEN_CONG_VIEC", tenCV)
+            putExtra("MO_TA_CONG_VIEC", moTaCV)
+        }
+        startActivity(intent)
+    }
 }
