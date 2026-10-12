@@ -42,4 +42,13 @@
         android:backgroundTint="#388E3C"
         android:textColor="#FFFFFF"/>
 
+    <Button
+        android:id="@+id/btnChinhSua"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Chỉnh sửa công việc"
+        android:backgroundTint="#1976D2"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="24dp"/>
+
 </LinearLayout>
