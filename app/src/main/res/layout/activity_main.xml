@@ -29,4 +29,25 @@
         android:minHeight="48dp"
         android:layout_marginBottom="12dp"/>
 
+    <!-- Ô nhập mô tả công việc -->
+    <EditText
+        android:id="@+id/edtMoTaCongViec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập mô tả công việc"
+        android:inputType="textMultiLine"
+        android:minLines="3"
+        android:gravity="top"
+        android:layout_marginBottom="20dp"/>
+    <!-- Ô nhập mô tả công việc -->
+    <EditText
+        android:id="@+id/edtMoTaCongViec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập mô tả công việc"
+        android:inputType="textMultiLine"
+        android:minLines="3"
+        android:gravity="top"
+        android:layout_marginBottom="20dp"/>
+
 </LinearLayout>
