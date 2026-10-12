@@ -12,6 +12,7 @@ class ChiTietCongViecActivity : AppCompatActivity() {
 
     private lateinit var tvChiTietTen: TextView
     private lateinit var tvChiTietMoTa: TextView
+    private lateinit var tvChiTietTrangThai: TextView
     private lateinit var btnChinhSua: Button
 
     private val launcher = registerForActivityResult(
@@ -21,9 +22,17 @@ class ChiTietCongViecActivity : AppCompatActivity() {
             val data = result.data
             val tenMoi = data?.getStringExtra("TEN_MOI")
             val moTaMoi = data?.getStringExtra("MO_TA_MOI")
+            val trangThaiMoi = data?.getBooleanExtra("TRANG_THAI_MOI", false) ?: false
 
             tvChiTietTen.text = "Tên công việc: $tenMoi"
             tvChiTietMoTa.text = "Mô tả: $moTaMoi"
+            if (trangThaiMoi) {
+                tvChiTietTrangThai.text = "Trạng thái: Đã hoàn thành"
+                tvChiTietTrangThai.setTextColor(resources.getColor(android.R.color.holo_green_dark))
+            } else {
+                tvChiTietTrangThai.text = "Trạng thái: Chưa hoàn thành"
+                tvChiTietTrangThai.setTextColor(resources.getColor(android.R.color.holo_red_dark))
+            }
         }
     }
 
@@ -33,6 +42,7 @@ class ChiTietCongViecActivity : AppCompatActivity() {
 
         tvChiTietTen = findViewById(R.id.tvChiTietTen)
         tvChiTietMoTa = findViewById(R.id.tvChiTietMoTa)
+        tvChiTietTrangThai = findViewById(R.id.tvChiTietTrangThai)
         btnChinhSua = findViewById(R.id.btnChinhSua)
 
         val tenCongViec = intent.getStringExtra("TEN_CONG_VIEC")
@@ -40,6 +50,7 @@ class ChiTietCongViecActivity : AppCompatActivity() {
 
         tvChiTietTen.text = "Tên công việc: $tenCongViec"
         tvChiTietMoTa.text = "Mô tả: $moTaCongViec"
+        tvChiTietTrangThai.text = "Trạng thái: Chưa hoàn thành"
 
         btnChinhSua.setOnClickListener {
             val intent = Intent(this, ChinhSuaCongViecActivity::class.java).apply {

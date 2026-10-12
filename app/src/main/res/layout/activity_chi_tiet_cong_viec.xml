@@ -32,4 +32,13 @@
         android:textSize="16sp"
         android:textColor="#555555"/>
 
+    <TextView
+        android:id="@+id/tvChiTietTrangThai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Trạng thái: Chưa hoàn thành"
+        android:textSize="16sp"
+        android:textColor="#C62828"
+        android:layout_marginBottom="24dp"/>
+
 </LinearLayout>
