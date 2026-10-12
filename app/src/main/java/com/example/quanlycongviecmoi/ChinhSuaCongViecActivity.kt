@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 
@@ -14,6 +15,7 @@ class ChinhSuaCongViecActivity : AppCompatActivity() {
 
         val edtSuaTen = findViewById<EditText>(R.id.edtSuaTen)
         val edtSuaMoTa = findViewById<EditText>(R.id.edtSuaMoTa)
+        val chkTrangThai = findViewById<CheckBox>(R.id.chkTrangThai)
         val btnLuu = findViewById<Button>(R.id.btnLuu)
 
         val tenCu = intent.getStringExtra("TEN_CU")
@@ -25,10 +27,17 @@ class ChinhSuaCongViecActivity : AppCompatActivity() {
         btnLuu.setOnClickListener {
             val tenMoi = edtSuaTen.text.toString().trim()
             val moTaMoi = edtSuaMoTa.text.toString().trim()
+            val trangThaiMoi = chkTrangThai.isChecked
+
+            if (tenMoi.isEmpty()) {
+                edtSuaTen.error = "Tên không được để trống!"
+                return@setOnClickListener
+            }
 
             val resultIntent = Intent().apply {
                 putExtra("TEN_MOI", tenMoi)
                 putExtra("MO_TA_MOI", moTaMoi)
+                putExtra("TRANG_THAI_MOI", trangThaiMoi)
             }
             setResult(Activity.RESULT_OK, resultIntent)
             finish()

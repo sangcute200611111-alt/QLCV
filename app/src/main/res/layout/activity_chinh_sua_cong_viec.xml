@@ -50,5 +50,12 @@
         android:backgroundTint="#1976D2"
         android:textColor="#FFFFFF"
         android:layout_marginTop="24dp"/>
+    <CheckBox
+        android:id="@+id/chkTrangThai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đã hoàn thành"
+        android:textSize="16sp"
+        android:layout_marginBottom="24dp"/>
 
 </LinearLayout>
