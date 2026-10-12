@@ -59,4 +59,13 @@
         android:textColor="#FFFFFF"
         android:layout_marginBottom="12dp"/>
 
+    <!-- Nút Xem danh sách công việc -->
+    <Button
+        android:id="@+id/btnXemDanhSach"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Xem danh sách công việc"
+        android:backgroundTint="#388E3C"
+        android:textColor="#FFFFFF"/>
+
 </LinearLayout>
